@@ -20,9 +20,12 @@ const moveToLoginWithCode = async (page: Page) => {
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .waitFor({ state: "visible" });
+    await page.waitForTimeout(3000)
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .hover();
+    await page.waitForTimeout(3000)
+
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .click();
