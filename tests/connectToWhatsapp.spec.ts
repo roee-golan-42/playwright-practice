@@ -29,6 +29,7 @@ const moveToLoginWithCode = async (page: Page) => {
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .click();
+    await page.waitForTimeout(3000)
 
   console.log("move to login with code succesfully");
 };
@@ -40,7 +41,10 @@ const enterPhoneNumber = async (page: Page, phoneNumber: string) => {
   await page
     .locator(`[aria-label='Type your phone number.']`)
     .fill("+972586640882");
+    await page.waitForTimeout(3000)
+
   await page.click("//button//*[contains(text(), 'Next')]");
+  await page.waitForTimeout(3000)
 
   console.log("phone enterd succesfully");
 };
