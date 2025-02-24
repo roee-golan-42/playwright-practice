@@ -58,6 +58,6 @@ const searchChat = async (page: Page, chatName: string) => {
     "[class='x1hx0egp x6ikm8r x1odjw0f x6prxxf x1k6rcq7 x1whj5v']"
   );
 
-  await searchBar.waitFor({ state: "visible" });
+  await searchBar.waitFor({ state: "visible", timeout: 60000 });
   await searchBar.fill(chatName);
 };
