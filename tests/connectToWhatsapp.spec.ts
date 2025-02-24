@@ -17,15 +17,13 @@ test("Connect To Whatsapp Poc", async ({ page }) => {
 });
 
 const moveToLoginWithCode = async (page: Page) => {
+  await page.waitForTimeout(3000)
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .waitFor({ state: "visible" });
-    await page.waitForTimeout(3000)
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .hover();
-    await page.waitForTimeout(3000)
-
   await page
     .locator(`//*[contains(text(), 'Log in with phone number')]`)
     .click();
@@ -41,8 +39,6 @@ const enterPhoneNumber = async (page: Page, phoneNumber: string) => {
   await page
     .locator(`[aria-label='Type your phone number.']`)
     .fill("+972586640882");
-    await page.waitForTimeout(3000)
-
   await page.click("//button//*[contains(text(), 'Next')]");
   await page.waitForTimeout(3000)
 
