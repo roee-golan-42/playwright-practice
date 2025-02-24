@@ -33,6 +33,9 @@ const moveToLoginWithCode = async (page: Page) => {
 const enterPhoneNumber = async (page: Page, phoneNumber: string) => {
   await page
     .locator(`[aria-label='Type your phone number.']`)
+    .waitFor({ state: "visible", timeout: 60000 });
+  await page
+    .locator(`[aria-label='Type your phone number.']`)
     .fill("+972586640882");
   await page.click("//button//*[contains(text(), 'Next')]");
 
